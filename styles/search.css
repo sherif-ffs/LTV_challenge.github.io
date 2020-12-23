@@ -1,6 +1,195 @@
 .search-section {
     width: 100%;
-    height: 35vh;
-    background: #004a80;
+    height: min-content;
     border: 1px solid white;
+    background: #004a80;
+    padding-bottom: 5vh; 
 }
+.search-section-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+    border: 1px solid white;
+    height: 80%;
+}
+.search-section-content-wrapper h1 {
+    text-align: center;
+    color: #fff;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 3rem;
+}
+.search-section-content-wrapper h3 span {
+    color: #F6BC25;
+    font-weight: 600;
+}
+
+.search-section-content-wrapper h3 {
+    text-align: center;
+    color: #fff;
+    margin-top: 1.5vh;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    letter-spacing: 0;
+    font-size: 1.75rem;
+}
+
+.search-bar-wrapper {
+    margin-top: 1vh;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    flex-direction: row;
+}
+.search-bar-wrapper input {
+    display: flex;
+    flex: 4.5;
+    height: 90%;
+    background: #FFFFFF;
+    box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+    border-radius: 3px;
+}
+.search-bar-wrapper input::placeholder {
+    color: #9b9b9b;
+    letter-spacing: 2px;
+    font-weight: 900;
+    font-size: 1rem;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.search-bar-wrapper button {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    text-align: center!important;
+    height: 95%;
+    margin-left: 1vw;
+    padding: 0px;
+    line-height: 10px;
+    background: #F2DA56;
+    box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+    border-radius: 6px;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 900;
+    transition: .3s;
+    font-size: 2rem;
+}
+
+.search-bar-wrapper button:hover {
+    background: #F6BC25;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-section-subtext {
+    display: flex;
+    margin-top: 1vh;
+    flex-direction: row;
+}
+.lock-icon {
+    width: 1.5vw;
+}
+.search-section-subtext p {
+    color: #F6BC25;
+    font-weight: 600;
+    margin-top: 2.2vh;
+    font-size: 1.2rem;
+    margin-left: 1vw;
+    font-family: Helvetica, Arial, sans-serif;
+}
+/* breakpoints for laptop */
+@media (max-width: 1600px) and (min-width: 1025px) {
+    .search-section {
+        height: 55vh;
+    }
+    .search-section-content-wrapper h3 {
+        font-size: 1.45rem;
+    }
+}
+
+/* breakpoints for mobile */
+@media (max-width: 420px) {
+    .search-section-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+        height: 50vh;
+    }
+    .search-bar-wrapper {
+        margin-top: 1vh;
+        width: 100%;
+        height: 20vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .search-section-content-wrapper h1 {
+        font-size: 2.6rem;
+    }
+    .search-section-content-wrapper h3 {
+        font-size: 1.25rem;
+    }
+    .search-bar-wrapper input {
+        display: flex;
+        flex: 1;
+    }
+    .search-bar-wrapper button {
+        display: flex;
+        flex: 1;
+        margin-left: 0;
+        margin-top: 2vh;
+    }
+    .lock-icon {
+        width: 8vw;
+    }
+    .search-section-subtext p {
+        color: #F6BC25;
+        font-weight: 600;
+        margin-top: 4vh;
+        font-size: 1.1rem;
+        margin-left: 4vw;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+}
+
+/* breakpoints for tablet */
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+    .search-section-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+        height: 40vh;
+    }
+    .search-bar-wrapper input {
+        display: flex;
+        flex: 2.5;
+        height: 90%;
+        background: #FFFFFF;
+        box-shadow: inset 0 -1px 4px 0 rgba(0,0,0,0.20);
+        border-radius: 3px;
+    }
+    
+    .search-bar-wrapper button {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        text-align: center!important;
+        height: 95%;
+        margin-left: 2vw;
+        padding: 0px;
+        line-height: 10px;
+        background: #F2DA56;
+        box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+        border-radius: 6px;
+        color: #004a80;
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        transition: .3s;
+        font-size: 2rem;
+    }
+ }
