@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/search.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/spinner.css">
+    <link rel="stylesheet" href="styles/results-section.css">
     <link rel="stylesheet" href="styles/reverse-email-lookup.css">
     <script defer src="js/index.js"></script>
 </head>
@@ -24,12 +26,18 @@
                 </div>                
             </div>
         </header>
+        <section class="results-section">
+            <h1>Results Section goes here</h1>
+        </section>
         <section class="search-section">
             <div class="search-section-content-wrapper">
                 <h1>Search Any Email Address</h1>
                 <h3><span>Start Here</span> - Look up the owner's name, photos and online profiles. See what you find!</h3>
                 <div class="search-bar-wrapper">
-                    <input placeholder="EMAIL" class="email-searchbar"/>
+                    <div class="email-input-wrapper">
+                        <input placeholder="EMAIL" class="email-searchbar"/>
+                        <div class="error-flag"><p>Please add a valid email address.</p></div>
+                    </div>
                     <button type="button" class="submit-button">GO!</button>
                 </div>
                 <div class="search-section-subtext">
