@@ -10,7 +10,6 @@
     margin-left: 20%;
     padding-top: 5vh; 
     height: 100%;
-    border: 1px solid red;    
 }
 .reverse-email-lookup-content h1 {
     text-align: center;
@@ -46,7 +45,7 @@
 .reverse-email-lookup-row {
     display: flex;
     flex: 1;
-    margin-top: 2vh;
+    margin-top: 5vh;
     flex-direction: row;
     width: 85%;
 }
@@ -80,10 +79,10 @@
 .reverse-email-lookup-row-text-wrapper h1 {
     font-size: 1.4rem;
     margin-right: auto;
-    float: left;
 }
 .reverse-email-lookup-row-text-wrapper p {
     font-size: 1.2rem;
+    margin-top: 1vh;
     line-height: 3vh;
 }
 

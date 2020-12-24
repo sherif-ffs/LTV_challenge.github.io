@@ -1,6 +1,191 @@
 .results-section {
     width: 100%;
-    height: 60vh;
+    height: min-content;
     background: #fff;
-    display: none;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+.results-section-content {
+    width: 60%;
+    margin-left: 20%;
+    height: 100%;
+}
+.results-section-content h1 {
+    text-align: center;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 3rem; 
+}
+.results-section-content h3 {
+    text-align: center;
+    color: #000;
+    margin-top: 1.5vh;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    letter-spacing: 0;
+    font-size: 1.5rem;
+}
+.result {
+    widows: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 450px;
+    margin-bottom: 100px;
+    border-radius: 30px;
+    background: #fff;
+    box-shadow: 0 1px 8px 0 rgba(0,0,0,0.50);
+}
+.result-icon-wrapper {
+    display: flex;
+    flex: 1;
+    margin-top: 4vh;
+}
+.result-icon {
+    display: flex;
+    background: #004a80;
+    height: 6rem;
+    width: 6rem;
+    margin-left: auto;
+    margin-right: 1vw;
+    line-height: 5rem;
+    border-radius: 360px;
+}
+
+.result-icon img {
+    width: 2vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.result-information-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    margin-top: 1.5vh;
+}
+.result-information-header {
+    display: flex;
+    flex-direction: column;
+}
+.result-information-header .name-age {
+    text-align: left;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 2rem; 
+}
+.result-information-header .user-details {
+    text-align: left;
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    margin-top: 1vh;
+    width: 95%;
+    font-size: 1.4rem; 
+}
+.result-information-body {
+    display: flex;
+    flex-direction: row;
+}
+.result-information-body-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.column-group {
+    margin-top: 1vh;
+}
+.column-group h1 {
+    text-align: left;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 1.45rem; 
+}
+.column-group p {
+    text-align: left;
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    margin-top: 1vh;
+    font-size: 1.2rem; 
+}
+.address-details {
+    width: 70%;
+}
+
+/* breakpoints for mobile */
+@media (max-width: 420px) {
+    .results-section-content {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+        height: min-content;
+    }
+    .result {
+        height: min-content;
+        padding-bottom: 30px;
+    }
+    .result-icon-wrapper {
+        display: none;
+    }
+    .result-information-header {
+        margin-left: 5vw;
+    }
+    .result-information-header .user-details {
+        font-size: 1.3rem; 
+    }
+    .result-information-body {
+        display: flex;
+        margin-left: 5vw;
+        flex-direction: column;
+    }
+    .address-details {
+        width: 90%;
+    }
+}
+
+/* breakpoints for tablet */
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+    .results-section-content {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .result-icon img {
+        width: 5vw;
+    }
+    .result {
+        height: min-content;
+        padding-bottom: 20px;
+    }
+    .result-information-wrapper {
+        margin-left: 2vw;
+    }
+    .result-information-header .name-age {
+        font-size: 1.75rem; 
+    }
+    .result-information-header .user-details {
+        font-size: 1.2rem; 
+    }
+    .column-group h1 {
+        font-size: 1.25rem; 
+    }
+    .column-group p {
+        font-size: 1rem; 
+    }
+    .address-details {
+        width: 90%;
+    }
 }

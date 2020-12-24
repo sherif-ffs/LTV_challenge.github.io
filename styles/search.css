@@ -1,7 +1,6 @@
 .search-section {
     width: 100%;
     height: min-content;
-    border: 1px solid white;
     background: #004a80;
     padding-bottom: 5vh; 
 }
@@ -10,7 +9,6 @@
     flex-direction: column;
     width: 60%;
     margin-left: 20%;
-    border: 1px solid white;
     height: min-content;
 }
 .search-section-content-wrapper h1 {
@@ -135,6 +133,12 @@
     .search-section-content-wrapper h3 {
         font-size: 1.45rem;
     }
+    .error-flag {
+        width: 60%;
+    }
+    .search-section-subtext {
+        margin-top: 10vh;
+    }
 }
 
 /* breakpoints for mobile */
@@ -168,6 +172,12 @@
         flex: 1;
         margin-left: 0;
         margin-top: 2vh;
+    }
+    .error-flag {
+        width: 90%;
+    }
+    .search-section-subtext {
+        margin-top: 5vh;
     }
     .lock-icon {
         width: 8vw;
