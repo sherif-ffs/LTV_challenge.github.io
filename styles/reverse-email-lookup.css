@@ -1,5 +1,198 @@
 .reverse-email-lookup {
     width: 100%;
-    height: 50vh;
-    background: #fff;
+    height: min-content;
+    padding-bottom: 10vh;
+    background-image: linear-gradient(0deg, #E6E6E6 0%, #FFFFFF 100%);
 }
+
+.reverse-email-lookup-content {
+    width: 60%;
+    margin-left: 20%;
+    padding-top: 5vh; 
+    height: 100%;
+    border: 1px solid red;    
+}
+.reverse-email-lookup-content h1 {
+    text-align: center;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 3rem;
+}
+.reverse-email-lookup-content p {
+    color: #4A4A4A;;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    width: 100%;
+    letter-spacing: 0;
+    line-height: 2rem;
+    margin-bottom: 0!important;
+    font-size: 1.75rem;
+}
+.reverse-email-lookup-columns-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: min-content;
+    padding-top: 5vh;
+}
+.reverse-email-lookup-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.reverse-email-lookup-row {
+    display: flex;
+    flex: 1;
+    margin-top: 2vh;
+    flex-direction: row;
+    width: 85%;
+}
+.right-side-row {
+    margin-left: auto;
+}
+.reverse-email-lookup-row-circle {
+    display: flex;
+    background: #004a80;
+    height: 6rem;
+    width: 6rem;
+    line-height: 5rem;
+    border-radius: 360px;
+}
+.reverse-email-lookup-row-circle h1 {
+    font-size: 4rem;
+    vertical-align: middle;
+    color: #f6bc25;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+.reverse-email-lookup-row-text-wrapper {
+    display: flex;
+    flex: 3;    
+    margin-left: 1vw;
+    margin-top: -3vh;
+    flex-direction: column;
+}
+.reverse-email-lookup-row-text-wrapper h1 {
+    font-size: 1.4rem;
+    margin-right: auto;
+    float: left;
+}
+.reverse-email-lookup-row-text-wrapper p {
+    font-size: 1.2rem;
+    line-height: 3vh;
+}
+
+/* breakpoints for laptop */
+@media (max-width: 1600px) and (min-width: 1025px) {
+    .reverse-email-lookup-row {
+        display: flex;
+        flex: 1;
+        margin-top: 12vh;
+        flex-direction: row;
+        width: 90%;
+    }
+    .reverse-email-lookup-column {
+        margin-top: -5vh!important;
+    }
+    .reverse-email-lookup-row-text-wrapper p {
+        width: 100%;
+    }
+}
+
+/* breakpoints for mobile */
+@media (max-width: 420px) {
+    .reverse-email-lookup-content {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .reverse-email-lookup-content p {
+        font-size: 1.55rem;
+    }
+    .reverse-email-lookup-columns-wrapper {
+        flex-direction: column;
+    }
+    .first-row-mobile {
+        margin-top: 5vh!important;
+    }
+    .reverse-email-lookup-row {
+        display: flex;
+        flex: 1;
+        margin-top: 10vh;
+        flex-direction: row;
+        width: 100%;
+    }
+    .right-side-row {
+        margin-left: 0;
+    }
+    .reverse-email-lookup-row-text-wrapper {
+        display: flex;
+        flex: 3;    
+        margin-left: 8vw;
+        flex-direction: column;
+    }
+    .reverse-email-lookup-row-text-wrapper h1 {
+        font-size: 1.3rem;
+    }
+    .reverse-email-lookup-row-text-wrapper p {
+        font-size: 1.1rem;
+    }
+}
+
+/* breakpoints for tablet */
+@media screen and (max-width: 1024px) and (min-width: 420px) {
+    
+    .reverse-email-lookup-content {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .reverse-email-lookup-columns-wrapper {
+        margin-top: -5vh!important;
+    }
+    .reverse-email-lookup-row {
+        margin-top: 7vh!important;
+    }
+    .reverse-email-lookup-row-circle {
+        display: flex;
+        background: #004a80;
+        height: 5rem;
+        width: 5rem;
+        line-height: 5rem;
+        border-radius: 360px;
+    }
+    .reverse-email-lookup-row-circle h1 {
+        font-size: 3rem;
+        margin-top: .25vh;
+    }
+    .reverse-email-lookup-content p {
+        font-size: 1.5rem;
+        margin-top: 2.25vh;
+    }
+    .first-row-tablet {
+        margin-top: 5vh!important;
+    }
+    .reverse-email-lookup-row-text-wrapper {
+        display: flex;
+        flex: 3;    
+        margin-left: 2vw;
+        flex-direction: column;
+    }
+    .reverse-email-lookup-row-text-wrapper h1 {
+        font-size: 1.1rem;
+        line-height: 2vh;
+    }
+    .reverse-email-lookup-row-text-wrapper p {
+        font-size: 1rem;
+        width: 90%;
+        margin-top: 1vh;
+        line-height: 2vh;
+    }
+    .reverse-email-lookup-row {
+        margin-top: 15vh;
+        width: 100%;
+    }
+ }

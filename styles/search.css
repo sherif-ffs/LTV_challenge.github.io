@@ -11,7 +11,7 @@
     width: 60%;
     margin-left: 20%;
     border: 1px solid white;
-    height: 80%;
+    height: min-content;
 }
 .search-section-content-wrapper h1 {
     text-align: center;
@@ -118,7 +118,7 @@
         flex-direction: column;
         width: 90%;
         margin-left: 5%;
-        height: 50vh;
+        height: min-content;
     }
     .search-bar-wrapper {
         margin-top: 1vh;
