@@ -1,14 +1,18 @@
 .results-section {
     width: 100%;
     height: min-content;
+    /* height: 50vh; */
     background: #fff;
     padding-top: 3vh;
     padding-bottom: 3vh;
+    display: none;
 }
 .results-section-content {
     width: 60%;
     margin-left: 20%;
-    height: 100%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: min-content;
 }
 .results-section-content h1 {
     text-align: center;
@@ -32,7 +36,8 @@
     widows: 100%;
     display: flex;
     flex-direction: row;
-    height: 450px;
+    height: min-content;
+    padding-bottom: 5vh;
     margin-bottom: 100px;
     border-radius: 30px;
     background: #fff;
@@ -98,10 +103,40 @@
     flex: 1;
     flex-direction: column;
 }
+.result-row-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+.row-group {
+    flex: 1;
+}
+.row-group h1 {
+    text-align: left;
+    color: #004a80;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    font-size: 1.45rem; 
+}
+.row-group p {
+    text-align: left;
+    color: #000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 0!important;
+    margin-top: 1vh;
+    font-size: 1.2rem; 
+}
+.phone-details {
+    color: #004a80!important;
+}
 
 .column-group {
     margin-top: 1vh;
 }
+
 .column-group h1 {
     text-align: left;
     color: #004a80;
@@ -133,6 +168,13 @@
         width: 90%;
         margin-left: 5%;
         height: min-content;
+    }
+    .result-row-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    .row-group {
+        flex: 1;
     }
     .result {
         height: min-content;
