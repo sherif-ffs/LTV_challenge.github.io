@@ -141,7 +141,8 @@
 
 .search-section-subtext {
     display: flex;
-    margin-top: 6vh!important;
+    position: relative;
+    margin-top: 0!important;
     flex-direction: row;
 }
 .lock-icon {
@@ -159,13 +160,19 @@
 /* breakpoints for laptop */
 @media (max-width: 1600px) and (min-width: 1025px) {
     .search-section {
-        height: 55vh;
+        height: min-content;
     }
     .search-section-content-wrapper h3 {
         font-size: 1.45rem;
     }
     .error-flag {
         width: 60%;
+    }
+    .search-section-subheader {
+        font-size: 1.45rem!important;
+    }
+    .search-section-span {
+        font-size: 1.45rem!important;
     }
     .search-section-subtext {
         margin-top: 10vh;
@@ -225,8 +232,9 @@
         width: 90%;
     }
     .search-section-subtext {
-        margin-top: 5vh;
+        margin-top: 7rem!important;
     }
+
     .lock-icon {
         width: 8vw;
     }
@@ -247,7 +255,7 @@
         flex-direction: column;
         width: 90%;
         margin-left: 5%;
-        height: 40vh;
+        height: min-content;
     }
     .search-bar-wrapper input {
         display: flex;
