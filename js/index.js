@@ -133,21 +133,22 @@ const SearchEmail = (function(){
     }
 
     const submitSearch = async () => {
-        const value = elements.searchBar.value;
-        if (!validateEmail(value)) {
+        const value = elements.searchBar.value; // get input value from searchbar
+        if (!validateEmail(value)) { // check if input value is a valid email address
             renderErrorMessage()
-            return
+            return // if value is not a valid email address end the function
         } else {
             removeErrorMessage()
         }
-        const searchResult = await callApi(value);
 
-        if (searchResult === undefined || searchResult.length == 0) {
+        const searchResult = await callApi(value); // if input value is an email address await response from API
+
+        if (searchResult === undefined || searchResult.length == 0) { // make sure that the result returned is not undefined or an empty array
             renderNoResultsFound()
         } else {
             populateResultWrapper(searchResult)
         }
-        clearSearchField()
+        clearSearchField() // reset search field input
     }
 
     const init = () => {

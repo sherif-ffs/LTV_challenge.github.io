@@ -257,15 +257,6 @@
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
     }
-    /* .search-subheader {
-        width: 80%;
-    }
-    .search-section-subheader {
-        font-size: 1rem!important;
-    }
-    .search-section-span {
-        font-size: 1rem!important;
-    } */
 
     .search-subheader {
         flex-direction: column;
