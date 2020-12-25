@@ -32,7 +32,7 @@ const SearchEmail = (function(){
     const reloadPage = () => {
         location.reload()
     }
-    
+
     const showSpinner = () => {
         elements.loadingSpinnerWrapper.style.display = 'block';
         elements.resultsSection.style.display = 'none'
@@ -81,8 +81,7 @@ const SearchEmail = (function(){
 
     const modifySearchSectionText = () => {
         elements.searchSectionHeader.textContent = "Can't Find the Right Person?"
-        elements.searchSectionSpan.textContent = "Try Again"
-        elements.searchSectionSubHeader.innerHTML = "&nbsp;- Make a new search"
+        elements.searchSectionSubHeader.innerHTML = "<span class='search-section-span'>Try Again</span>&nbsp;- Make a new search"
     }
     const renderNoResultsFound = () => {
         elements.resultWrapper.style.display = 'none';
