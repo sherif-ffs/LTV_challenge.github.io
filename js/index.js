@@ -33,12 +33,14 @@ const SearchEmail = (function(){
         location.reload()
     }
 
+    // hide all HTML sections except for navigation bar and footer while spinner is active
     const showSpinner = () => {
         elements.loadingSpinnerWrapper.style.display = 'block';
         elements.resultsSection.style.display = 'none'
         elements.searchSection.style.display = 'none'
         elements.reverseEmailSection.style.display = 'none'
     }
+
     const hideSpinner = () => {
         elements.loadingSpinnerWrapper.style.display = 'none';
         elements.resultsSection.style.display = 'flex'
@@ -97,6 +99,8 @@ const SearchEmail = (function(){
         elements.resultWrapper.style.display = 'flex';
         elements.resultsSectionHeader.textContent = '1 Result'
         elements.resultsSectionSubHeader.textContent = "Look at the result below to see the details of the person you're searched for.";
+
+        // store all of the content from searchResults in variables
         const name = searchResult.first_name + ' ' + searchResult.last_name
         const description = searchResult.description
         const email = searchResult.email
@@ -104,6 +108,7 @@ const SearchEmail = (function(){
         const phoneNumbers = searchResult.phone_numbers
         const relatives = searchResult.relatives
 
+        // update result html with data returned from the api
         elements.nameAndAge.textContent = name;
         elements.userDetails.textContent = description
         elements.addressDetails.textContent = address
@@ -112,9 +117,11 @@ const SearchEmail = (function(){
         // remove existing phone numbers before creating and appending new ones
         document.querySelectorAll('.phone-details').forEach(e => e.remove())
 
+        // now that existing phone numbers have been removed I looped through the new phone numbers returned from the API and created and appended new phone numbers.
         phoneNumbers.forEach(number => {
             let numberElement = document.createElement('p')
             numberElement.classList.add('phone-details')
+            // format string to number
             numberElement.textContent = `(${number.substring(0,3)}) ${number.substring(3,6)}-${number.substring(6,9)}`
             elements.phoneHeader.appendChild(numberElement)
         })
@@ -122,6 +129,8 @@ const SearchEmail = (function(){
 
         // remove existing relatives before creating and appending new ones
         document.querySelectorAll('.relatives-details').forEach(e => e.remove())
+        // now that existing relatives have been removed I looped through the new relatives returned from the API and created and appended new relative elements.
+
         relatives.forEach(relative => {
             let relativeElement = document.createElement('p') 
             relativeElement.classList.add('relatives-details')
