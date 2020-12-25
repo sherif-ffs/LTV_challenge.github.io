@@ -5,6 +5,8 @@ const SearchEmail = (function(){
         submitButton: document.querySelector('.submit-button'),
         errorFlag: document.querySelector('.error-flag'),
         resultsSection: document.querySelector('.results-section'),
+        searchSection: document.querySelector('.search-section'),
+        reverseEmailSection: document.querySelector('.reverse-email-lookup'),
         addressDetails: document.querySelector('.address-details'),
         emailDetails: document.querySelector('.email-details'),
         emailHeader: document.querySelector('.email-header'),
@@ -18,13 +20,26 @@ const SearchEmail = (function(){
         resultWrapper: document.querySelector('.result'),
         searchSectionHeader: document.querySelector('.search-section-header'),
         searchSectionSubHeader: document.querySelector('.search-section-subheader'),
-        searchSectionSpan: document.querySelector('.search-section-span')
+        searchSectionSpan: document.querySelector('.search-section-span'),
+        loadingSpinnerWrapper: document.querySelector('#loading')
     }
 
     state = {
         searchResults: []
     }
 
+    const showSpinner = () => {
+        elements.loadingSpinnerWrapper.style.display = 'block';
+        elements.resultsSection.style.display = 'none'
+        elements.searchSection.style.display = 'none'
+        elements.reverseEmailSection.style.display = 'none'
+    }
+    const hideSpinner = () => {
+        elements.loadingSpinnerWrapper.style.display = 'none';
+        elements.resultsSection.style.display = 'flex'
+        elements.searchSection.style.display = 'flex'
+        elements.reverseEmailSection.style.display = 'none'
+    }
     const validateEmail = (email) => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -48,8 +63,10 @@ const SearchEmail = (function(){
         const url = `https://ltv-data-api.herokuapp.com/api/v1/records.json?email=${value}`;
 
         try {
+            showSpinner()
             const response = await fetch(proxyurl + url)
             const result = await response.json();
+            hideSpinner()
             console.log('result: ', result)
             return result;
         } catch (error) {
@@ -120,7 +137,7 @@ const SearchEmail = (function(){
             return
         } else {
             removeErrorMessage()
-            document.querySelector('.reverse-email-lookup').style.display = 'none';
+            // document.querySelector('.reverse-email-lookup').style.display = 'none';
         }
         const searchResult = await callApi(value);
         console.log('searchResult: ', searchResult)
