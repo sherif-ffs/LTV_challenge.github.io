@@ -1,6 +1,8 @@
 const SearchEmail = (function(){
 
+    // cache all DOM elements we will be using in this file
     elements = {
+        logo: document.querySelector('.navigation-bar-logo'),
         searchBar: document.querySelector('.email-searchbar'),
         submitButton: document.querySelector('.submit-button'),
         errorFlag: document.querySelector('.error-flag'),
@@ -24,10 +26,13 @@ const SearchEmail = (function(){
         loadingSpinnerWrapper: document.querySelector('#loading')
     }
 
-    state = {
-        searchResults: []
+    const clearSearchField = () => {
+        elements.searchBar.value = ''
     }
-
+    const reloadPage = () => {
+        location.reload()
+    }
+    
     const showSpinner = () => {
         elements.loadingSpinnerWrapper.style.display = 'block';
         elements.resultsSection.style.display = 'none'
@@ -40,6 +45,8 @@ const SearchEmail = (function(){
         elements.searchSection.style.display = 'flex'
         elements.reverseEmailSection.style.display = 'none'
     }
+
+    // regex function to check whether input value is a valid email address
     const validateEmail = (email) => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(String(email).toLowerCase());
@@ -54,7 +61,6 @@ const SearchEmail = (function(){
     const removeErrorMessage = () => {
         document.querySelector('.email-input-wrapper').style.height = '100px'
         elements.errorFlag.style.display = 'none';
-        // elements.errorFlag.style.visibility = 'hidden';
         elements.searchBar.style.border = 'none';
     }
 
@@ -67,7 +73,6 @@ const SearchEmail = (function(){
             const response = await fetch(proxyurl + url)
             const result = await response.json();
             hideSpinner()
-            console.log('result: ', result)
             return result;
         } catch (error) {
             console.error(error);
@@ -89,7 +94,6 @@ const SearchEmail = (function(){
     }
 
     const populateResultWrapper = (searchResult) => {
-        console.log('searchResult: ', searchResult)
         elements.resultsSection.style.height = 'min-content'
         elements.resultWrapper.style.display = 'flex';
         elements.resultsSectionHeader.textContent = '1 Result'
@@ -120,7 +124,7 @@ const SearchEmail = (function(){
         // remove existing relatives before creating and appending new ones
         document.querySelectorAll('.relatives-details').forEach(e => e.remove())
         relatives.forEach(relative => {
-            let relativeElement = document.createElement('p')
+            let relativeElement = document.createElement('p') 
             relativeElement.classList.add('relatives-details')
             relativeElement.textContent = relative
             elements.relativesHeader.appendChild(relativeElement)
@@ -132,22 +136,19 @@ const SearchEmail = (function(){
     const submitSearch = async () => {
         const value = elements.searchBar.value;
         if (!validateEmail(value)) {
-            console.log('email is not valid')
             renderErrorMessage()
             return
         } else {
             removeErrorMessage()
-            // document.querySelector('.reverse-email-lookup').style.display = 'none';
         }
         const searchResult = await callApi(value);
-        console.log('searchResult: ', searchResult)
 
         if (searchResult === undefined || searchResult.length == 0) {
             renderNoResultsFound()
         } else {
             populateResultWrapper(searchResult)
         }
-        state.searchResults = searchResult;
+        clearSearchField()
     }
 
     const init = () => {
@@ -155,7 +156,6 @@ const SearchEmail = (function(){
     }
 
     window.onload = function() {
-        console.log('asda')
         init()
       }
 
