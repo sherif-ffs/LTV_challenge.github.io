@@ -35,7 +35,7 @@ const SearchEmail = (function(){
 
     // hide all HTML sections except for navigation bar and footer while spinner is active
     const showSpinner = () => {
-        elements.loadingSpinnerWrapper.style.display = 'block';
+        elements.loadingSpinnerWrapper.style.display = 'flex';
         elements.resultsSection.style.display = 'none'
         elements.searchSection.style.display = 'none'
         elements.reverseEmailSection.style.display = 'none'
